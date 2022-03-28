@@ -9,9 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/react": "^1.8.6",
+    "@emotion/babel-plugin": "^11.7.2",
+    "@emotion/react": "^11.8.2",
+    "@emotion/styled": "^11.8.1",
+    "formik": "^2.2.9",
     "next": "12.1.1",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-remove-scroll-bar": "^2.2.0",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "eslint": "8.12.0",
