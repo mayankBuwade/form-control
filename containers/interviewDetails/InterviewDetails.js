@@ -16,6 +16,7 @@ export const InterviewDetails = () => {
     setFormOneData,
     setFormTwoData,
     setPageTwoVisited,
+    setPageOneVisited,
 
   } = useContext(AllData);
 
@@ -47,6 +48,8 @@ export const InterviewDetails = () => {
         setFormTwoData([]);
         setFormThreeData([]);
         setFinalPageVisited(false);
+        setPageOneVisited(false);
+        setPageTwoVisited(false);
       },
     });
 
@@ -56,7 +59,7 @@ export const InterviewDetails = () => {
 
   return (
     <Box as="form" width="697px" height="553px" onSubmit={handleSubmit}>
-      <Box overflow="hidden">
+      <Box height="553px" overflow="hidden">
         <VStack spacing="16px">
           <VStack alignItems="flex-start" width="full">
             <Text
@@ -135,9 +138,8 @@ export const InterviewDetails = () => {
         justifyContent="space-between"
         alignItems="center"
         mt="78px"
-        position="fixed"
-        left="760px"
-        bottom="41px"
+        position="relative"
+        left="395px"
         width="301px"
         height="45px"
       >

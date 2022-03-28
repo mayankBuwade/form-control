@@ -216,7 +216,6 @@ export const RequisitionDetails = () => {
           height="38px"
           bg="gray.500"
           type="button"
-          onClick={() => setPage(2)}
         >
           Previous
         </Button>

@@ -17,14 +17,23 @@ const validationSchema = Yup.object({
 });
 
 export const JobDetails = () => {
-  const { page, setPage, formTwoData, setFormTwoData, lastPage, setLastPage, setPageOneVisited, pageTwoVisited } =
-    useContext(AllData);
+  const {
+    page,
+    setPage,
+    formTwoData,
+    setFormTwoData,
+    lastPage,
+    setLastPage,
+    setPageOneVisited,
+    pageTwoVisited,
+  } = useContext(AllData);
 
-    if (pageTwoVisited) {
-      var initialValues = formTwoData;
-    } else {
-      var initialValues = rawValues;
-    }
+  if (pageTwoVisited) {
+    var initialValues = formTwoData;
+  } else {
+    var initialValues = rawValues;
+  }
+  
 
   const { handleSubmit, handleChange, handleBlur, errors, values, touched } =
     useFormik({
@@ -44,87 +53,88 @@ export const JobDetails = () => {
 
   return (
     <Box as="form" width="697px" height="553px" onSubmit={handleSubmit}>
-      <VStack spacing="16px">
-        <VStack alignItems="flex-start" width="full">
-          <Text
-            as="label"
-            fontWeight={"normal"}
-            color={"customGray"}
-            fontSize={"sm"}
-            htmlFor="jobTitle"
-          >
-            Job Title
-          </Text>
-          <Input
-            bg="white"
-            height="49px"
-            id="jobTitle"
-            type="text"
-            onChange={handleChange}
-            value={values.jobTitle}
-            onBlur={handleBlur}
-          />
-          {errors.jobTitle && touched.jobTitle ? (
-            <Text color="red.500">{errors.jobTitle}</Text>
-          ) : null}
-        </VStack>
+      <Box height="553px">
+        <VStack spacing="16px">
+          <VStack alignItems="flex-start" width="full">
+            <Text
+              as="label"
+              fontWeight={"normal"}
+              color={"customGray"}
+              fontSize={"sm"}
+              htmlFor="jobTitle"
+            >
+              Job Title
+            </Text>
+            <Input
+              bg="white"
+              height="49px"
+              id="jobTitle"
+              type="text"
+              onChange={handleChange}
+              value={values.jobTitle}
+              onBlur={handleBlur}
+            />
+            {errors.jobTitle && touched.jobTitle ? (
+              <Text color="red.500">{errors.jobTitle}</Text>
+            ) : null}
+          </VStack>
 
-        <VStack alignItems="flex-start" width="full">
-          <Text
-            as="label"
-            fontWeight={"normal"}
-            color={"customGray"}
-            fontSize={"sm"}
-            htmlFor="jobDescription"
-          >
-            Job Description
-          </Text>
-          <Input
-            bg="white"
-            height="77px"
-            id="jobDescription"
-            type="text"
-            as="textarea"
-            onChange={handleChange}
-            value={values.jobDescription}
-            onBlur={handleBlur}
-          />
-          {errors.jobDescription && touched.jobDescription ? (
-            <Text color="red.500">{errors.jobDescription}</Text>
-          ) : null}
+          <VStack alignItems="flex-start" width="full">
+            <Text
+              as="label"
+              fontWeight={"normal"}
+              color={"customGray"}
+              fontSize={"sm"}
+              htmlFor="jobDescription"
+            >
+              Job Description
+            </Text>
+            <Input
+              bg="white"
+              height="77px"
+              id="jobDescription"
+              type="text"
+              as="textarea"
+              onChange={handleChange}
+              value={values.jobDescription}
+              onBlur={handleBlur}
+            />
+            {errors.jobDescription && touched.jobDescription ? (
+              <Text color="red.500">{errors.jobDescription}</Text>
+            ) : null}
+          </VStack>
+          <VStack alignItems="flex-start" width="full">
+            <Text
+              as="label"
+              fontWeight={"normal"}
+              color={"customGray"}
+              fontSize={"sm"}
+              htmlFor="jobLocation"
+            >
+              Job Location
+            </Text>
+            <Input
+              bg="white"
+              height="49px"
+              id="jobLocation"
+              type="text"
+              onChange={handleChange}
+              value={values.jobLocation}
+              onBlur={handleBlur}
+            />
+            {errors.jobLocation && touched.jobLocation ? (
+              <Text color="red.500">{errors.jobLocation}</Text>
+            ) : null}
+          </VStack>
         </VStack>
-        <VStack alignItems="flex-start" width="full">
-          <Text
-            as="label"
-            fontWeight={"normal"}
-            color={"customGray"}
-            fontSize={"sm"}
-            htmlFor="jobLocation"
-          >
-            Job Location
-          </Text>
-          <Input
-            bg="white"
-            height="49px"
-            id="jobLocation"
-            type="text"
-            onChange={handleChange}
-            value={values.jobLocation}
-            onBlur={handleBlur}
-          />
-          {errors.jobLocation && touched.jobLocation ? (
-            <Text color="red.500">{errors.jobLocation}</Text>
-          ) : null}
-        </VStack>
-      </VStack>
+      </Box>
       <Box
         display="flex"
         justifyContent="space-between"
         alignItems="center"
         mt="78px"
-        position="fixed"
-        left="760px"
-        bottom="41px"
+        position="relative"
+        left="395px"
         width="301px"
         height="45px"
       >
